@@ -6,6 +6,9 @@ namespace App\Data;
 
 class DecimalData extends Data implements DataInterface
 {
+    /**
+     * Allowed operators
+     */
     const OPERATORS = [
         'add',
         'sub',
@@ -13,6 +16,10 @@ class DecimalData extends Data implements DataInterface
         'div'
     ];
 
+    /**
+     * @param $value
+     * @return int|float
+     */
     protected function getValue($value)
     {
         if(is_numeric($value)){
@@ -23,9 +30,9 @@ class DecimalData extends Data implements DataInterface
     }
 
     /**
-     *
+     * Do calcultion
      */
-    public function calculate()
+    public function calculate(): string
     {
         if($this->operator == 0 && $this->getValueB() == 0){
             return 'Division by 0 attempt! <br/> Next cause black hole!';

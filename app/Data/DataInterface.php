@@ -6,8 +6,24 @@ namespace App\Data;
 
 interface DataInterface
 {
-    public function setData(array $data);
+    /**
+     * @param array $data
+     * @return Data
+     */
+    public function setData(array $data): Data;
+
+    /**
+     * @return mixed
+     */
     public function getValueA();
+
+    /**
+     * @return mixed
+     */
     public function getValueB();
-    public function calculate();
+
+    /**
+     * @return string
+     */
+    public function calculate(): string ;
 }

@@ -14,6 +14,8 @@
 Route::get('/', function () {
     return view('welcome');
 });
-
+/**
+ * Defined routes for Calculator
+ */
 Route::get('form', 'CalculatorController@createAction')->name('form.create');
 Route::post('form', 'CalculatorController@calculateAction')->name('form.calculate');

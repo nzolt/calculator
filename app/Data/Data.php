@@ -14,11 +14,17 @@ class Data
         $this->setData($data);
     }
 
-    public function setData(array $data)
+    /**
+     * @param array $data
+     * @return Data
+     */
+    public function setData(array $data): Data
     {
         $this->setValueA($data['valuea']);
         $this->setValueB($data['valueb']);
         $this->setOperator($data['operator']);
+
+        return $this;
     }
 
     /**

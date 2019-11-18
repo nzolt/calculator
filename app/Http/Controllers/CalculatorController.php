@@ -6,6 +6,9 @@ use App\Data\DataFactory;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Validator;
 
+/**
+ * @OA\Info(title="Calculator API", version="1.0.0")
+ */
 class CalculatorController extends Controller
 {
     /**
@@ -16,6 +19,10 @@ class CalculatorController extends Controller
         return view('calculator');
     }
 
+    /**
+     * @param Request $request
+     * @return \Illuminate\Contracts\Routing\ResponseFactory|\Illuminate\Http\Response|int|mixed|string
+     */
     public function calculateAction(Request $request)
     {
         if($request->getMethod() == 'POST'){

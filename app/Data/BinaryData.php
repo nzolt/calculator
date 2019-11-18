@@ -6,6 +6,9 @@ namespace App\Data;
 
 class BinaryData extends Data implements DataInterface
 {
+    /**
+     * Allowed operators
+     */
     const OPERATORS = [
         'and',
         'or',
@@ -27,9 +30,9 @@ class BinaryData extends Data implements DataInterface
     }
 
     /**
-     *
+     * Do calculation
      */
-    public function calculate()
+    public function calculate(): string
     {
         if(extension_loaded('gmp')){
             $xor1 = gmp_init($this->getValueA(), 2);
